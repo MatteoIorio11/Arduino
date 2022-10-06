@@ -1,6 +1,7 @@
 #include <Arduino.h>
+#include<EnableInterrupt.h>
 
-#define BUTTON_PIN 2
+#define BUTTON_PIN 13
 
 volatile int count = 0;
 int prev = 0; 
@@ -12,7 +13,8 @@ void inc_count(){
 void setup() {
   // put your setup code here, to run once:
     Serial.begin(9600);
-    attachInterrupt(digitalPinToInterrupt(BUTTON_PIN), inc_count, RISING);
+    //attachInterrupt(digitalPinToInterrupt(BUTTON_PIN), inc_count, RISING);
+    enableInterrupt(BUTTON_PIN, inc_count, RISING);
 }
 
 
