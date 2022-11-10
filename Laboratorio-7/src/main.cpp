@@ -10,7 +10,7 @@ void loop() {
   val = analogRead(A0);
   float voltage = val * (5.0 / 1024.0);
   float temperatureC = (voltage - 0.5) * 100;
-  Serial.println(t);
+  Serial.println(temperatureC);
 }
 
 
